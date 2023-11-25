@@ -1,7 +1,7 @@
 name: metgroup_zebra_rfid
-description: "A new Flutter plugin project."
+description: A Flutter plugin for interacting with Zebra RFID readers.
 version: 0.0.1
-homepage:
+homepage: www.kenkocol.com
 
 environment:
   sdk: '>=3.2.0 <4.0.0'

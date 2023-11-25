@@ -1,65 +1,63 @@
-// import 'package:flutter/foundation.dart';
-// import 'package:flutter/services.dart';
-
-// import 'metgroup_zebra_rfid_platform_interface.dart';
-
-// /// An implementation of [MetgroupZebraRfidPlatform] that uses method channels.
-// class MethodChannelMetgroupZebraRfid extends MetgroupZebraRfidPlatform {
-//   /// The method channel used to interact with the native platform.
-//   @visibleForTesting
-//   final methodChannel = const MethodChannel('metgroup_zebra_rfid');
-
-//   @override
-//   Future<String?> getPlatformVersion() async {
-//     final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
-//     return version;
-//   }
-// }
+import 'dart:developer';
 
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'metgroup_zebra_rfid_platform_interface.dart';
 
 class MethodChannelMetgroupZebraRfid extends MetgroupZebraRfidPlatform {
-  @visibleForTesting
   final methodChannel = const MethodChannel('metgroup_zebra_rfid');
+  final _rfidScanEventChannel =
+      const EventChannel('metgroup_zebra_rfid/rfid_scan');
+  final _triggerActionEventChannel =
+      const EventChannel('metgroup_zebra_rfid/trigger_action');
+  final _deviceStatusEventChannel =
+      const EventChannel('metgroup_zebra_rfid/device_status');
+  final _connectionStatusEventChannel =
+      const EventChannel('metgroup_zebra_rfid/connection_status');
 
   @override
-  Future<void> initialize() async {
-    await methodChannel.invokeMethod('initialize');
+  Future<dynamic> initialize() async {
+    log("===========INITIALIZE");
+    return await methodChannel.invokeMethod('initialize');
   }
 
   @override
-  Future<void> connect() async {
-    await methodChannel.invokeMethod('connect');
-  }
-
-  @override
-  Future<void> disconnect() async {
-    await methodChannel.invokeMethod('disconnect');
-  }
-
-  @override
-  Future<void> startRfidScan() async {
-    await methodChannel.invokeMethod('startRfidScan');
+  Future<void> startRfidScan(int memoryBankIndex) async {
+    log("===========startRfidScan");
+    await methodChannel
+        .invokeMethod('startRfidScan', {'memoryBankIndex': memoryBankIndex});
   }
 
   @override
   Future<void> stopRfidScan() async {
+    log("===========stopRfidScan");
     await methodChannel.invokeMethod('stopRfidScan');
   }
 
   @override
-  Future<void> scanBarcode() async {
-    await methodChannel.invokeMethod('scanBarcode');
+  Stream<dynamic> onListenRFID() =>
+      _rfidScanEventChannel.receiveBroadcastStream();
+
+  @override
+  Stream<dynamic> onTriggerAction() =>
+      _triggerActionEventChannel.receiveBroadcastStream();
+
+  @override
+  Stream<dynamic> onDeviceStatus() =>
+      _deviceStatusEventChannel.receiveBroadcastStream();
+
+  @override
+  Future<bool> connectRfid() async {
+    log("===========connectRfid");
+    return await methodChannel.invokeMethod("connectRfid");
   }
 
   @override
-  Future<double> getBatteryLevel() async {
-    final batteryLevel =
-        await methodChannel.invokeMethod<double>('getBatteryLevel');
-    return batteryLevel ?? 0.0;
+  Future<bool> disconnectRfid() async {
+    log("===========disconnectRfid");
+    return await methodChannel.invokeMethod("disconnectRfid");
   }
 
-  // Implementar aquí los canales para los otros métodos...
+  @override
+  Stream onConnectionStatus() =>
+      _connectionStatusEventChannel.receiveBroadcastStream();
 }

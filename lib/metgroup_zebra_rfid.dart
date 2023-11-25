@@ -1,41 +1,32 @@
-// import 'metgroup_zebra_rfid_platform_interface.dart';
-
-// class MetgroupZebraRfid {
-//   Future<String?> getPlatformVersion() {
-//     return MetgroupZebraRfidPlatform.instance.getPlatformVersion();
-//   }
-// }
+import 'dart:developer';
 
 import 'metgroup_zebra_rfid_platform_interface.dart';
 
+enum MemoryBank { epc, tid, user, reserved }
+
 class MetgroupZebraRfid {
-  Future<void> initialize() async {
-    await MetgroupZebraRfidPlatform.instance.initialize();
-  }
+  static final MetgroupZebraRfid _instance = MetgroupZebraRfid._internal();
+  factory MetgroupZebraRfid() => _instance;
+  MetgroupZebraRfid._internal();
 
-  Future<void> connect() async {
-    await MetgroupZebraRfidPlatform.instance.connect();
-  }
+  final rfid = MetgroupZebraRfidPlatform.instance;
 
-  Future<void> disconnect() async {
-    await MetgroupZebraRfidPlatform.instance.disconnect();
-  }
+  Future<dynamic> initialize() => rfid.initialize();
 
-  Future<void> startRfidScan() async {
-    await MetgroupZebraRfidPlatform.instance.startRfidScan();
-  }
+  Future<bool> connectRfid() => rfid.connectRfid();
 
-  Future<void> stopRfidScan() async {
-    await MetgroupZebraRfidPlatform.instance.stopRfidScan();
-  }
+  Future<bool> disconnectRfid() => rfid.disconnectRfid();
 
-  Future<void> scanBarcode() async {
-    await MetgroupZebraRfidPlatform.instance.scanBarcode();
-  }
+  Stream<dynamic> onConnectionStatus() => rfid.onConnectionStatus();
 
-  Future<double> getBatteryLevel() async {
-    return await MetgroupZebraRfidPlatform.instance.getBatteryLevel();
-  }
+  Future<void> startRfidScanner({required MemoryBank memoryBank}) =>
+      rfid.startRfidScan(memoryBank.index);
 
-  // Añadir más métodos de API según sea necesario...
+  Future<void> stopRfidScanner() => rfid.stopRfidScan();
+
+  Stream<dynamic> onListenRFID() => rfid.onListenRFID();
+
+  Stream<dynamic> onTriggerAction() => rfid.onTriggerAction();
+
+  Stream<dynamic> onDeviceStatus() => rfid.onDeviceStatus();
 }
