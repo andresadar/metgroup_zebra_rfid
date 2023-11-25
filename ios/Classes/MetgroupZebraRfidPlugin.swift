@@ -1,7 +1,11 @@
 import Flutter
 import UIKit
+import CoreLocation
 
 public class MetgroupZebraRfidPlugin: NSObject, FlutterPlugin {
+
+    private let rfidController = RFIDController()
+
     private var deviceStatusTimer: Timer?
     private var rfidScanTimer: Timer?
     private let rfidScanHandler = RfidScanStreamHandler()
@@ -149,4 +153,63 @@ class ConnectionStatusStreamHandler: NSObject, FlutterStreamHandler {
     func sendConnectionUpdate(isConnected: Bool) {
         eventSink?(isConnected)
     }
+}
+
+
+
+///// CONTROLADOR DEL RFID
+class RFIDController: NSObject, srfidISdkApiDelegate {
+    var apiInstance: srfidISdkApi!
+    var isConnected: Bool = false
+    var currentReaderID: Int32?
+
+    override init() {
+        super.init()
+        initializeSDK()
+    }
+
+    func initializeSDK() {
+
+        // inicializar y configurar el SDK de Zebra.
+        apiInstance = srfidSdkFactory.createRfidSdkApiInstance()
+
+        apiInstance.srfidEnableDebugLog()
+
+        // Establecer el modo de operación
+        apiInstance.srfidSetOperationalMode(Int32(SRFID_OPMODE_MFI))
+
+        // Habilitar la detección de lectores disponibles
+        apiInstance.srfidEnableAvailableReadersDetection(true)
+
+        apiInstance.srfidSetDelegate(self)
+        // Configuración adicional y suscripción a eventos...
+    }
+
+    // Métodos para conectar y desconectar
+    func connectReader(readerID: Int32) {
+        apiInstance.srfidEstablishCommunicationSession(readerID)
+    }
+
+    func disconnectReader(readerID: Int32) {
+        apiInstance.srfidTerminateCommunicationSession(readerID)
+    }
+
+    // Métodos delegados para manejar eventos RFID
+    func srfidEventReaderAppeared(_ availableReader: srfidReaderInfo!) {
+        // Manejar aparición de lector
+    }
+
+    func srfidEventReaderDisappeared(_ readerID: Int32) {
+        // Manejar desaparición de lector
+    }
+
+    func srfidEventCommunicationSessionEstablished(_ activeReader: srfidReaderInfo!) {
+        // Manejar establecimiento de sesión de comunicación
+    }
+
+    func srfidEventCommunicationSessionTerminated(_ readerID: Int32) {
+        // Manejar terminación de sesión de comunicación
+    }
+
+    // Otros métodos delegados según necesidad...
 }

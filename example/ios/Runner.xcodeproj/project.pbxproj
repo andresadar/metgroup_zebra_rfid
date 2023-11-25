@@ -12,6 +12,11 @@
 		38D060AC5E90F0C8BD699A1C /* Pods_RunnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C70EC96B54C8230A96E9DED /* Pods_RunnerTests.framework */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		55F8994261024CE5340A5526 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F055BA101786941901EB2B7E /* Pods_Runner.framework */; };
+		657C3E142B126FDE008ACAE7 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657C3E132B126FDE008ACAE7 /* CoreBluetooth.framework */; };
+		657C3E162B126FE8008ACAE7 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657C3E152B126FE8008ACAE7 /* ExternalAccessory.framework */; };
+		657C3E192B1270C3008ACAE7 /* libintegratedsdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 657C3E172B127077008ACAE7 /* libintegratedsdk.a */; };
+		657C3E1A2B1270CF008ACAE7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 657C3E182B127097008ACAE7 /* libz.tbd */; };
+		657C3E792B127420008ACAE7 /* libintegratedsdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 657C3E782B127420008ACAE7 /* libintegratedsdk.a */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
@@ -51,6 +56,56 @@
 		3378F9F518ABC50421CC2314 /* Pods-RunnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunnerTests.debug.xcconfig"; path = "Target Support Files/Pods-RunnerTests/Pods-RunnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
 		4303D633DF0964E0D61F4D22 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
+		657C3E132B126FDE008ACAE7 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		657C3E152B126FE8008ACAE7 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		657C3E172B127077008ACAE7 /* libintegratedsdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libintegratedsdk.a; path = "../../../../../Downloads/123RFID_IOS_Mobile_1.1.64/Zebra_RFID_SDK_iOS_v1.1.64_SRC/symbolrfid-sdk/libintegratedsdk.a"; sourceTree = "<group>"; };
+		657C3E182B127097008ACAE7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		657C3E4B2B127420008ACAE7 /* RfidAccessConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidAccessConfig.h; sourceTree = "<group>"; };
+		657C3E4C2B127420008ACAE7 /* RfidSdkDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidSdkDefs.h; sourceTree = "<group>"; };
+		657C3E4D2B127420008ACAE7 /* RfidSingulationConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidSingulationConfig.h; sourceTree = "<group>"; };
+		657C3E4E2B127420008ACAE7 /* RfidWlanScanList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidWlanScanList.h; sourceTree = "<group>"; };
+		657C3E4F2B127420008ACAE7 /* RMDAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDAttributes.h; sourceTree = "<group>"; };
+		657C3E502B127420008ACAE7 /* RfidDatabaseEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidDatabaseEvent.h; sourceTree = "<group>"; };
+		657C3E512B127420008ACAE7 /* RfidSdkApiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidSdkApiDelegate.h; sourceTree = "<group>"; };
+		657C3E522B127420008ACAE7 /* RfidRegulatoryConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidRegulatoryConfig.h; sourceTree = "<group>"; };
+		657C3E532B127420008ACAE7 /* AccessOperationCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccessOperationCode.h; sourceTree = "<group>"; };
+		657C3E542B127420008ACAE7 /* RfidTemperatureEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidTemperatureEvent.h; sourceTree = "<group>"; };
+		657C3E552B127420008ACAE7 /* RfidRadioErrorEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidRadioErrorEvent.h; sourceTree = "<group>"; };
+		657C3E562B127420008ACAE7 /* RfidTagFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidTagFilter.h; sourceTree = "<group>"; };
+		657C3E572B127420008ACAE7 /* RfidAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidAttribute.h; sourceTree = "<group>"; };
+		657C3E582B127420008ACAE7 /* RfidAccessCriteria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidAccessCriteria.h; sourceTree = "<group>"; };
+		657C3E592B127420008ACAE7 /* RfidWlanProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidWlanProfile.h; sourceTree = "<group>"; };
+		657C3E5A2B127420008ACAE7 /* RfidTagReportConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidTagReportConfig.h; sourceTree = "<group>"; };
+		657C3E5B2B127420008ACAE7 /* RfidBatteryEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidBatteryEvent.h; sourceTree = "<group>"; };
+		657C3E5C2B127420008ACAE7 /* SbtScannerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbtScannerInfo.h; sourceTree = "<group>"; };
+		657C3E5D2B127420008ACAE7 /* RfidSdkFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidSdkFactory.h; sourceTree = "<group>"; };
+		657C3E5E2B127420008ACAE7 /* RfidAccessParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidAccessParameters.h; sourceTree = "<group>"; };
+		657C3E5F2B127420008ACAE7 /* RfidBatteryStatusInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidBatteryStatusInformation.h; sourceTree = "<group>"; };
+		657C3E602B127420008ACAE7 /* RfidReaderVersionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidReaderVersionInfo.h; sourceTree = "<group>"; };
+		657C3E612B127420008ACAE7 /* RfidStartTriggerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidStartTriggerConfig.h; sourceTree = "<group>"; };
+		657C3E622B127420008ACAE7 /* RfidReaderInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidReaderInfo.h; sourceTree = "<group>"; };
+		657C3E632B127420008ACAE7 /* RfidMultipleTagsConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidMultipleTagsConfig.h; sourceTree = "<group>"; };
+		657C3E642B127420008ACAE7 /* ISbtSdkApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISbtSdkApi.h; sourceTree = "<group>"; };
+		657C3E652B127420008ACAE7 /* SbtSdkDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbtSdkDefs.h; sourceTree = "<group>"; };
+		657C3E662B127420008ACAE7 /* RfidReaderCapabilitiesInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidReaderCapabilitiesInfo.h; sourceTree = "<group>"; };
+		657C3E672B127420008ACAE7 /* FirmwareUpdateEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirmwareUpdateEvent.h; sourceTree = "<group>"; };
+		657C3E682B127420008ACAE7 /* RfidUntraceableConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidUntraceableConfig.h; sourceTree = "<group>"; };
+		657C3E692B127420008ACAE7 /* RfidOperEndSummaryEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidOperEndSummaryEvent.h; sourceTree = "<group>"; };
+		657C3E6A2B127420008ACAE7 /* ISbtSdkApiDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISbtSdkApiDelegate.h; sourceTree = "<group>"; };
+		657C3E6B2B127420008ACAE7 /* RfidSdkApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidSdkApi.h; sourceTree = "<group>"; };
+		657C3E6C2B127420008ACAE7 /* RfidLinkProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidLinkProfile.h; sourceTree = "<group>"; };
+		657C3E6D2B127420008ACAE7 /* RfidGetWifiStatusInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidGetWifiStatusInfo.h; sourceTree = "<group>"; };
+		657C3E6E2B127420008ACAE7 /* RfidPreFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidPreFilter.h; sourceTree = "<group>"; };
+		657C3E6F2B127420008ACAE7 /* RfidDynamicPowerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidDynamicPowerConfig.h; sourceTree = "<group>"; };
+		657C3E702B127420008ACAE7 /* RfidAntennaConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidAntennaConfiguration.h; sourceTree = "<group>"; };
+		657C3E712B127420008ACAE7 /* RfidPowerEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidPowerEvent.h; sourceTree = "<group>"; };
+		657C3E722B127420008ACAE7 /* RfidTagData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidTagData.h; sourceTree = "<group>"; };
+		657C3E732B127420008ACAE7 /* RfidRegionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidRegionInfo.h; sourceTree = "<group>"; };
+		657C3E742B127420008ACAE7 /* RfidReportConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidReportConfig.h; sourceTree = "<group>"; };
+		657C3E752B127420008ACAE7 /* RfidStopTriggerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidStopTriggerConfig.h; sourceTree = "<group>"; };
+		657C3E762B127420008ACAE7 /* SbtSdkFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbtSdkFactory.h; sourceTree = "<group>"; };
+		657C3E772B127420008ACAE7 /* RfidUniqueTagsReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RfidUniqueTagsReport.h; sourceTree = "<group>"; };
+		657C3E782B127420008ACAE7 /* libintegratedsdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libintegratedsdk.a; sourceTree = "<group>"; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
@@ -72,7 +127,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				657C3E162B126FE8008ACAE7 /* ExternalAccessory.framework in Frameworks */,
+				657C3E192B1270C3008ACAE7 /* libintegratedsdk.a in Frameworks */,
+				657C3E142B126FDE008ACAE7 /* CoreBluetooth.framework in Frameworks */,
+				657C3E792B127420008ACAE7 /* libintegratedsdk.a in Frameworks */,
 				55F8994261024CE5340A5526 /* Pods_Runner.framework in Frameworks */,
+				657C3E1A2B1270CF008ACAE7 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,9 +155,74 @@
 			path = RunnerTests;
 			sourceTree = "<group>";
 		};
+		657C3E492B127420008ACAE7 /* symbolrfid-sdk */ = {
+			isa = PBXGroup;
+			children = (
+				657C3E4A2B127420008ACAE7 /* include */,
+				657C3E782B127420008ACAE7 /* libintegratedsdk.a */,
+			);
+			path = "symbolrfid-sdk";
+			sourceTree = "<group>";
+		};
+		657C3E4A2B127420008ACAE7 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				657C3E4B2B127420008ACAE7 /* RfidAccessConfig.h */,
+				657C3E4C2B127420008ACAE7 /* RfidSdkDefs.h */,
+				657C3E4D2B127420008ACAE7 /* RfidSingulationConfig.h */,
+				657C3E4E2B127420008ACAE7 /* RfidWlanScanList.h */,
+				657C3E4F2B127420008ACAE7 /* RMDAttributes.h */,
+				657C3E502B127420008ACAE7 /* RfidDatabaseEvent.h */,
+				657C3E512B127420008ACAE7 /* RfidSdkApiDelegate.h */,
+				657C3E522B127420008ACAE7 /* RfidRegulatoryConfig.h */,
+				657C3E532B127420008ACAE7 /* AccessOperationCode.h */,
+				657C3E542B127420008ACAE7 /* RfidTemperatureEvent.h */,
+				657C3E552B127420008ACAE7 /* RfidRadioErrorEvent.h */,
+				657C3E562B127420008ACAE7 /* RfidTagFilter.h */,
+				657C3E572B127420008ACAE7 /* RfidAttribute.h */,
+				657C3E582B127420008ACAE7 /* RfidAccessCriteria.h */,
+				657C3E592B127420008ACAE7 /* RfidWlanProfile.h */,
+				657C3E5A2B127420008ACAE7 /* RfidTagReportConfig.h */,
+				657C3E5B2B127420008ACAE7 /* RfidBatteryEvent.h */,
+				657C3E5C2B127420008ACAE7 /* SbtScannerInfo.h */,
+				657C3E5D2B127420008ACAE7 /* RfidSdkFactory.h */,
+				657C3E5E2B127420008ACAE7 /* RfidAccessParameters.h */,
+				657C3E5F2B127420008ACAE7 /* RfidBatteryStatusInformation.h */,
+				657C3E602B127420008ACAE7 /* RfidReaderVersionInfo.h */,
+				657C3E612B127420008ACAE7 /* RfidStartTriggerConfig.h */,
+				657C3E622B127420008ACAE7 /* RfidReaderInfo.h */,
+				657C3E632B127420008ACAE7 /* RfidMultipleTagsConfig.h */,
+				657C3E642B127420008ACAE7 /* ISbtSdkApi.h */,
+				657C3E652B127420008ACAE7 /* SbtSdkDefs.h */,
+				657C3E662B127420008ACAE7 /* RfidReaderCapabilitiesInfo.h */,
+				657C3E672B127420008ACAE7 /* FirmwareUpdateEvent.h */,
+				657C3E682B127420008ACAE7 /* RfidUntraceableConfig.h */,
+				657C3E692B127420008ACAE7 /* RfidOperEndSummaryEvent.h */,
+				657C3E6A2B127420008ACAE7 /* ISbtSdkApiDelegate.h */,
+				657C3E6B2B127420008ACAE7 /* RfidSdkApi.h */,
+				657C3E6C2B127420008ACAE7 /* RfidLinkProfile.h */,
+				657C3E6D2B127420008ACAE7 /* RfidGetWifiStatusInfo.h */,
+				657C3E6E2B127420008ACAE7 /* RfidPreFilter.h */,
+				657C3E6F2B127420008ACAE7 /* RfidDynamicPowerConfig.h */,
+				657C3E702B127420008ACAE7 /* RfidAntennaConfiguration.h */,
+				657C3E712B127420008ACAE7 /* RfidPowerEvent.h */,
+				657C3E722B127420008ACAE7 /* RfidTagData.h */,
+				657C3E732B127420008ACAE7 /* RfidRegionInfo.h */,
+				657C3E742B127420008ACAE7 /* RfidReportConfig.h */,
+				657C3E752B127420008ACAE7 /* RfidStopTriggerConfig.h */,
+				657C3E762B127420008ACAE7 /* SbtSdkFactory.h */,
+				657C3E772B127420008ACAE7 /* RfidUniqueTagsReport.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
 		79C0F2EE55F077C332094C01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				657C3E182B127097008ACAE7 /* libz.tbd */,
+				657C3E172B127077008ACAE7 /* libintegratedsdk.a */,
+				657C3E152B126FE8008ACAE7 /* ExternalAccessory.framework */,
+				657C3E132B126FDE008ACAE7 /* CoreBluetooth.framework */,
 				F055BA101786941901EB2B7E /* Pods_Runner.framework */,
 				0C70EC96B54C8230A96E9DED /* Pods_RunnerTests.framework */,
 			);
@@ -118,6 +243,7 @@
 		97C146E51CF9000F007C117D = {
 			isa = PBXGroup;
 			children = (
+				657C3E492B127420008ACAE7 /* symbolrfid-sdk */,
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
 				97C146EF1CF9000F007C117D /* Products */,
@@ -161,7 +287,6 @@
 				BDFF569D9EEC3AFAB77F3AC2 /* Pods-RunnerTests.release.xcconfig */,
 				87DCEE1D22000EB723004E0B /* Pods-RunnerTests.profile.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -476,10 +601,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/symbolrfid-sdk",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.metgroupZebraRfidExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				USER_HEADER_SEARCH_PATHS = "“$(SRCROOT)/symbolrfid-sdk/include/”";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Profile;
@@ -655,11 +785,16 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/symbolrfid-sdk",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.metgroupZebraRfidExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				USER_HEADER_SEARCH_PATHS = "“$(SRCROOT)/symbolrfid-sdk/include/”";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -678,10 +813,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/symbolrfid-sdk",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.metgroupZebraRfidExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				USER_HEADER_SEARCH_PATHS = "“$(SRCROOT)/symbolrfid-sdk/include/”";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
